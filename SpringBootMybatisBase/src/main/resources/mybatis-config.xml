@@ -4,8 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<package name="com.touma.entity" />
+		<package name="com.touma.springbootmybatisbase.entity" />
 	</typeAliases>
 	<mappers>
+		<mapper resource="com/touma/springbootmybatisbase/mapper/Util.xml"/>
 	</mappers>
 </configuration>
