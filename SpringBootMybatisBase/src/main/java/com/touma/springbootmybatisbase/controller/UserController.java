@@ -22,7 +22,7 @@ public class UserController {
 
   @RequestMapping("/login")
   public JsonMessage login(UserModel model) throws Exception {
-    //http://127.0.0.1:20000/user/login?token=694632d1-ac0a-47a2-9adb-e54b369b8f7a&user.username=Touma&user.password=touma123
+    //http://127.0.0.1:20000/user/login?token=ac0ceab7-82bc-49d8-965b-987aec610448&user.username=Touma&user.password=touma123
     return userService.login(model);
   }
   
