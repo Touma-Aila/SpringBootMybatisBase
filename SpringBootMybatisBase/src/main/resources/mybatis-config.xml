@@ -8,5 +8,7 @@
 	</typeAliases>
 	<mappers>
 		<mapper resource="com/touma/springbootmybatisbase/mapper/Util.xml"/>
+		<mapper resource="com/touma/springbootmybatisbase/mapper/TbToken.xml"/>
+		<mapper resource="com/touma/springbootmybatisbase/mapper/TbUser.xml"/>
 	</mappers>
 </configuration>

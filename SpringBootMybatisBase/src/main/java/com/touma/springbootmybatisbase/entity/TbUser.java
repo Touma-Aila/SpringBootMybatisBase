@@ -1,6 +1,5 @@
 package com.touma.springbootmybatisbase.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import com.alibaba.fastjson.annotation.JSONField;

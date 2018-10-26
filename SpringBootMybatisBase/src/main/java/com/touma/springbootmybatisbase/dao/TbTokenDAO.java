@@ -47,4 +47,22 @@ public interface TbTokenDAO {
    * @throws Exception
    */
   int deleteTokens() throws Exception;
+
+  /**
+   * -用户上线
+   * 
+   * @param token
+   * @return
+   * @throws Exception
+   */
+  int userLogin(TbToken token) throws Exception;
+
+  /**
+   * -用户下线
+   * 
+   * @param token
+   * @return
+   * @throws Exception
+   */
+  int userLogout(TbToken token) throws Exception;
 }
