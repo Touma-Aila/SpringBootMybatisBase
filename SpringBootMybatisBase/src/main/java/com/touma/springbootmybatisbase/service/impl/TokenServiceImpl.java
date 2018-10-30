@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.touma.springbootmybatisbase.dao.TbTokenDAO;
+import com.touma.springbootmybatisbase.dao.TbTokenInfoDAO;
 import com.touma.springbootmybatisbase.entity.TbToken;
 import com.touma.springbootmybatisbase.service.TokenService;
 import com.touma.springbootmybatisbase.utils.MyUtils;
@@ -21,6 +22,8 @@ import com.touma.springbootmybatisbase.utils.MyUtils;
 public class TokenServiceImpl implements TokenService {
   @Autowired
   private TbTokenDAO tbTokenDAO;
+  @Autowired
+  private TbTokenInfoDAO tbTokenInfoDAO;
 
   /**
    * 创建新的token
@@ -54,6 +57,9 @@ public class TokenServiceImpl implements TokenService {
   
   @Override
   public int deleteTokens() throws Exception {
+    //先删除tokeninfo
+    tbTokenInfoDAO.deleteTokenInfos();
+    //再删除token
     return tbTokenDAO.deleteTokens();
   }
 }

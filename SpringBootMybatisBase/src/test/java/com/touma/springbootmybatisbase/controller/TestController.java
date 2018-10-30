@@ -33,11 +33,12 @@ public class TestController implements NeedLogin {
    * @throws Exception
    */
   @RequestMapping("/index")
-  public JsonMessage index(TestModel  model) throws Exception {
+  public JsonMessage index(TestModel model) throws Exception {
     // http://127.0.0.1:20000/test/index?token=
     JsonMessage message = JsonMessage.getSuccess("测试NeedLogin接口");
     // 可以直接拿到登录的user信息
     message.getDatas().put("user", user);
     return message;
   }
+
 }

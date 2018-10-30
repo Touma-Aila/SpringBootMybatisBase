@@ -10,5 +10,7 @@
 		<mapper resource="com/touma/springbootmybatisbase/mapper/Util.xml"/>
 		<mapper resource="com/touma/springbootmybatisbase/mapper/TbToken.xml"/>
 		<mapper resource="com/touma/springbootmybatisbase/mapper/TbUser.xml"/>
+		<mapper resource="com/touma/springbootmybatisbase/mapper/TbTokenInfo.xml"/>
+		<mapper resource="com/touma/springbootmybatisbase/mapper/Test.xml"/>
 	</mappers>
 </configuration>
