@@ -5,12 +5,13 @@
 <mapper namespace="com.touma.springbootmybatisbase.dao.TbUserDAO">
 	<select id="queryByName" parameterType="TbUser" resultType="TbUser">
 		select uid,username,password,nickname,isEnable,reDate from TbUser
-		where username=#{username}
+		where username=#{username} and isEnable='y'
 	</select>
 	
 	<select id="queryByToken" parameterType="TbToken" resultType="TbUser">
 		select uid,username,password,nickname,isEnable,reDate from TbUser
 		where uid =
-		(select uid from TbToken where token=#{token})
+		(select info from TbTokenInfo where token=#{token} and infoKey='user') 
+		and isEnable='y'
 	</select>
 </mapper>

@@ -10,8 +10,10 @@ values('token.timeout','10',now());
 /*默认测试用户*/
 insert into TbUser(username,password,nickname)
 values('Touma','touma123','冬馬和纱');
+insert into TbUser(username,password,nickname)
+values('Kazusa','touma1234','艾拉');
 /*查询*/
 select configKey,configValue,lastupdate from TbConfig;
 select username,password,nickname,isEnable,reDate from TbUser;
-select token,uid,lastupdate from TbToken;
+select token,lastupdate from TbToken;
 select token,infoKey,info,lastupdate from TbTokenInfo;

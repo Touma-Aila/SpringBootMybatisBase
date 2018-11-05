@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.touma.springbootmybatisbase.dao.TbTokenDAO;
+import com.touma.springbootmybatisbase.dao.TbTokenInfoDAO;
 import com.touma.springbootmybatisbase.dao.TbUserDAO;
-import com.touma.springbootmybatisbase.entity.TbToken;
+import com.touma.springbootmybatisbase.entity.TbTokenInfo;
 import com.touma.springbootmybatisbase.entity.TbUser;
 import com.touma.springbootmybatisbase.exception.AppException;
 import com.touma.springbootmybatisbase.model.UserModel;
@@ -25,9 +25,9 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private TbUserDAO tbUserDAO;
-
+  
   @Autowired
-  private TbTokenDAO tbTokenDAO;
+  private TbTokenInfoDAO tbTokenInfoDAO;
 
   @Override
   public JsonMessage login(UserModel model) throws Exception {
@@ -49,10 +49,20 @@ public class UserServiceImpl implements UserService {
     if (!suser.getPassword().equalsIgnoreCase(user.getPassword())) {
       return JsonMessage.getFail("密码错误");
     }
-    // 将用户信息保存到token表
-    TbToken token = model.makeTbToken();
-    token.setUid(suser.getUid());
-    int result = tbTokenDAO.userLogin(token);
+    // 需要将用户信息保存到tokeninfo表
+    TbTokenInfo tokenInfo=model.makeTbTokenInfo();
+    tokenInfo.setInfo(suser.getUid()+"");
+    //查询数据库中是否存在用户信息
+    int result=0;
+    TbTokenInfo sinfo=tbTokenInfoDAO.queryUser(tokenInfo);
+    if (sinfo==null) {
+      //不存在就添加
+      result=tbTokenInfoDAO.addUser(tokenInfo);
+    }else {
+      //存在就更新
+      sinfo.setInfo(tokenInfo.getInfo());
+      result=tbTokenInfoDAO.updateUser(sinfo);
+    }
     // 如果数据库更新的结果不是预期效果需要通过抛出异常打断流程 回滚事务
     if (result != 1) {
       throw AppException.getaAppException(500, "登录状态异常!");
@@ -62,7 +72,7 @@ public class UserServiceImpl implements UserService {
   
   @Override
   public JsonMessage logout(UserModel model) throws Exception {
-    tbTokenDAO.userLogout(model.makeTbToken());
+    tbTokenInfoDAO.deleteUser(model.makeTbTokenInfo());
     return JsonMessage.getSuccess("退出成功");
   }
   
@@ -72,6 +82,8 @@ public class UserServiceImpl implements UserService {
     //不要返回uid给客户端
     if (user != null) {
       user.setUid(null);
+      user.setPassword(null);
+      user.setIsEnable(null);
     }
     JsonMessage message=JsonMessage.getSuccess("");
     message.getDatas().put("user", user);
