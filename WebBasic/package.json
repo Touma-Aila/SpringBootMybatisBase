@@ -1,0 +1,11 @@
+{
+  "name": "webbasic",
+  "version": "1.0.0",
+  "description": "web项目基础",
+  "author": "Touma",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bootstrap3": "^3.3.5",
+    "jquery": "^3.3.1"
+  }
+}
