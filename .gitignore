@@ -12,3 +12,6 @@
 /BaseSpringBootProject/gradle
 /BaseSpringBootProject/uploadfiles
 /WebBasic/node_modules
+/WebBasic/test
+/WebBasic/nginx/logs
+/WebBasic/nginx/temp

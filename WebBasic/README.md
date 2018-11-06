@@ -21,6 +21,7 @@
     - ![8](doc-images/nodejs008.jpg)
   - 执行`npm config set registry http://registry.npm.taobao.org`设置淘宝源
   - 执行`npm -g install cnpm`安装 cnpm
+- [gulp 官方网站](http://gulpjs.com)
   - 执行`cnpm -g install gulp`全局安装 gulp 客户端
 
 ## 项目配置和初始化
@@ -32,6 +33,7 @@
   - 4:entry point(index.js):入门 js
   - 5:test command:测试命令
   - 6:git repository:git 的地址
+  - 7:keywords:关键字
   - 8:author:作者
   - 9:license:(ISC):版本协议
   - 10:Is This OK？(yes):确认完成
@@ -42,6 +44,19 @@
   - 执行`cnpm --save install bootstrap3`安装 bootstrap3
   - 安装成功 `package.json`中`dependencies`小节中会出现 bootstrap3 版本号 项目`node——modules`目录中也会出现 bootstrap3
 - 配置 js 目录
+
   - 在项目根目录创建[jsconfig.json](jsconfig.json)文件
   - `exclude` 小节是配置忽略的文件或者目录的列表 一定要`node_modlues`目录排除 该目录是 nodejs 插件目录 也不要将该目录添加到 git 中
   - `typeAcquisition`小节是配置要 js 提示的 api 列表
+
+- vscode 插件安装
+  - Bracket Pair Colorizer (彩色括号配对)
+  - Chinese (Simplified) Language Pack for Visual Studio Code (中文简体)
+  - HTML CSS Support (html 文件中 css 名称支持插件)
+  - Markdown All in One (md 文件预览插件)
+  - markdownlint (markdown 文件语法拼写检查)
+  - nginx-formatter (nginx 格式化插件)
+  - nginx.conf (nginx 配置文件插件)
+  - open in browser (在浏览器中打开文件)
+  - Prettier - Code formatter (代码格式化插件)
+  - VSCode Great Icons (vscode 图标美化 在文件图标主题中使用)
