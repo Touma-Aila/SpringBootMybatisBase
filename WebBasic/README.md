@@ -60,3 +60,17 @@
   - open in browser (在浏览器中打开文件)
   - Prettier - Code formatter (代码格式化插件)
   - VSCode Great Icons (vscode 图标美化 在文件图标主题中使用)
+- 安装前端相关开发nodejs插件
+  - 执行`cnpm --save install gulp` 安装项目 gulp依赖
+  - 执行`cnpm --save install del` 安装项目del(文件删除插件)依赖
+  - 执行`cnpm --save install gulp-file-sync` 安装gulp-file-sync(文件同步插件)依赖
+  - 执行`cnpm --save install gulp-watch` 安装gulp-watch(文件变化检测插件)依赖
+  - 执行`cnpm --save install gulp-concat` 安装gulp-concat(文件合并插件)依赖
+  - 执行`cnpm --save install gulp-jshint` 安装gulp-jshint(js语法插件)依赖
+  - 执行`cnpm --save install gulp-uglify` 安装gulp-uglify(js混淆插件)依赖
+  - 执行`cnpm --save install gulp-plumber` 安装gulp-plumber(gulp错误冒泡插件)依赖
+  - 执行`cnpm --save install gulp-clean-css` 安装gulp-clean-css(css压缩插件)依赖
+  - 执行`cnpm --save install gulp-sourcemaps` 安装gulp-sourcemaps(map文件插件)依赖
+- 项目初始化
+  - 创建[gulpfile.js](gulpfile.js)(gulp任务配置)文件
+  - 第三方依赖文件复制
