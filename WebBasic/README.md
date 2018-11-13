@@ -28,15 +28,15 @@
 
 - 执行`cnpm init`初始化项目 npm
   - 1:package name(目录名称) 输入项目名称回车默认就是目录名称
-  - 2:version(1.0.0):输入项目版本号
-  - 3:description:输入项目描述
-  - 4:entry point(index.js):入门 js
-  - 5:test command:测试命令
-  - 6:git repository:git 的地址
-  - 7:keywords:关键字
-  - 8:author:作者
-  - 9:license:(ISC):版本协议
-  - 10:Is This OK？(yes):确认完成
+  - 2:version(1.0.0) 输入项目版本号
+  - 3:description 输入项目描述
+  - 4:entry point(index.js) 入门 js
+  - 5:test command 测试命令
+  - 6:git repository git 的地址
+  - 7:keywords 关键字
+  - 8:author 作者
+  - 9:license:(ISC) 版本协议
+  - 10:Is This OK？(yes) 确认完成
   - 执行完成项目里面会出现 package.json 可以直接修改该文件
 - 安装 jquery 和 bootstrap3
   - 执行`cnpm --save install jquery`安装 jquery
@@ -66,7 +66,7 @@
   - 执行`cnpm --save install gulp-file-sync` 安装gulp-file-sync(文件同步插件)依赖
   - 执行`cnpm --save install gulp-watch` 安装gulp-watch(文件变化检测插件)依赖
   - 执行`cnpm --save install gulp-concat` 安装gulp-concat(文件合并插件)依赖
-  - 执行`cnpm --save install gulp-jshint` 安装gulp-jshint(js语法插件)依赖
+  - 执行`cnpm --save install jshint gulp-jshint` 安装gulp-jshint(js语法插件)依赖
   - 执行`cnpm --save install gulp-uglify` 安装gulp-uglify(js混淆插件)依赖
   - 执行`cnpm --save install gulp-plumber` 安装gulp-plumber(gulp错误冒泡插件)依赖
   - 执行`cnpm --save install gulp-clean-css` 安装gulp-clean-css(css压缩插件)依赖
@@ -74,3 +74,17 @@
 - 项目初始化
   - 创建[gulpfile.js](gulpfile.js)(gulp任务配置)文件
   - 第三方依赖文件复制
+- 项目开发脚本
+  - 执行`StartDev.bat`启动开发者模式(开启Nginx 打开浏览器 开启项目Dev)
+  - `gulp dev`的窗口通过按键`Ctrl+C`后输入`y`中断执行
+  - `browser.bat`的窗口可以直接关闭
+  - `StartNginx.bat`需要通过执行`StopNginx.bat`来中断执行后关闭
+  - 如果`gulp dev`意外中断只要单独执行`StartWacth.bat`重新开启
+  - 如果`StartNginx.bat`意外中断还是需要执行`StopNginx.bat`确认中断后再执行`StartNginx.bat`重新开启
+  - 如果浏览器关闭需要执行`StartBrowser.bat`重新开启
+- 项目clone下来后的初始化步骤
+  - 确保[软件安装和配置](#软件安装和配置)的步骤已经执行
+  - 修改`browser.bat`中的浏览器位置为正确的本机配置
+  - 修改`StartNginx.bat`和`StopNginx.bat`中的Nginx的位置为正确的本机位置
+  - 执行`cnpm install`初始化插件和依赖
+  - 执行`gulp build`指令初始化项目后即可进入`项目开发脚本`的步骤启动开发模式
