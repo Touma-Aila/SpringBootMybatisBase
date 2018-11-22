@@ -1,0 +1,12 @@
+{
+  "name": "augularjs-study",
+  "version": "1.0.0",
+  "description": "Augularjs学习",
+  "author": "Touma",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "bootstrap3": "^3.3.5",
+    "jquery": "^3.3.1"
+  }
+}
