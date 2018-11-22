@@ -43,6 +43,8 @@
   - 安装成功 `package.json`中`dependencies`小节中会出现 jquery 版本号 项目`node——modules`目录中也会出现 jquery
   - 执行`cnpm --save install bootstrap3`安装 bootstrap3
   - 安装成功 `package.json`中`dependencies`小节中会出现 bootstrap3 版本号 项目`node——modules`目录中也会出现 bootstrap3
+  - 执行`cnpm --save install jq-easyui`安装jquery-easyui依赖
+  - 安装成功`package.json`中`dependencies`小节中会出现jquery-easyui版本号 项目`node——modules`目录中也会出现 jquery-easyui
 - 配置 js 目录
 
   - 在项目根目录创建[jsconfig.json](jsconfig.json)文件
