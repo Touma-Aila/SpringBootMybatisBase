@@ -38,7 +38,7 @@ public class UtilServiceImpl implements UtilService {
       tokenInfoDAO.addImageCode(tokenInfo);
     } else {
       // 存在就更新图片code
-      tokenInfo.setInfo(code);
+      sInfo.setInfo(code);
       tokenInfoDAO.updateImageCode(sInfo);
     }
     return code;
