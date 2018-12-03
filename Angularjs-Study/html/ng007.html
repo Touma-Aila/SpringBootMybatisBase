@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Angularjs基础学习-7</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Angularjs基础学习-7</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <!-- ng-view就是切换路由的视图 -->
+    <a href="#!">首页</a>
+    <a href="#!/main">其它页</a>
+    <div ng-view></div>
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <!-- 下面的次序必须严格遵守 在实际项目中会交给gulp这样的构建工具控制 -->
+    <!-- 首先是框架 -->
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/angular-messages.min.js"></script>
+    <script src="lib/js/angular-animate.min.js"></script>
+    <script src="lib/js/angular-sanitize.min.js"></script>
+    <!-- 然后是初始化 -->
+    <script src="app/js/init-route.js"></script>
+    <!-- 然后是业务逻辑 -->
+
+    <!--<script src="app/js/DataService.js"></script>-->
+    <!-- 最后是ng绑定启动 -->
+    <script src="app/js/startup.js"></script>
+  </body>
 </html>
