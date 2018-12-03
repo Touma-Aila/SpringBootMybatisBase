@@ -1,0 +1,37 @@
+.myinc {
+  position: relative;
+}
+
+.myani {
+  left: 0px;
+}
+
+.myani.ng-enter {
+  position: absolute;
+  width: 100%;
+  animation: myani-in 0.5s;
+}
+
+.myani.ng-leave {
+  position: absolute;
+  width: 100%;
+  animation: myani-out 0.5s;
+}
+
+@keyframes myani-in {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes myani-out {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 100%;
+  }
+}

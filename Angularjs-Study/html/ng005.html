@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--
+      $rootScope声明的变量要用$root.访问 以区分全局和局部
+      $scope中的变量不能超出控制器的范围
+    -->
+    <title>{{ $root.appTitle }}-{{ appTitle }}</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="app/css/ng005.css" />
+    <link rel="stylesheet" href="app/css/ng005-1.css" />
+    <link rel="stylesheet" href="app/css/ng005-2.css" />
+  </head>
+  <body ng-controller="MyCtrl">
+    <div>{{ appTitle }}</div>
+    <div>
+      <label> <input type="checkbox" ng-model="mycheck" /> 是否提示? </label>
+      {{ mycheck }}
+    </div>
+    <!--
+      逻辑判断控制显示
+      ng-if="逻辑值或者逻辑表达式"
+      值为true就出现 false就移除
+    -->
+    <hr />
+    <div ng-if="mycheck" class="bg-primary">选中了就不会显示出来</div>
+    <div ng-if="!mycheck" class="bg-danger">选中了才会显示出来</div>
+    <!--
+      ng-show和ng-hide
+      ng-show="逻辑值或者逻辑表达式" 值为true显示 false隐藏
+      ng-show="逻辑值或者逻辑表达式" 值为true隐藏 false显示
+    -->
+    <div ng-show="mycheck" class="bg-primary">ng-show</div>
+    <div ng-show="mycheck" class="bg-danger">ng-hide</div>
+
+    <div>
+      <label for="cvalue">checkbox和ng-value配合</label>
+      <input type="checkbox" id="cvalue" /> {{ cvalue }}
+    </div>
+    <hr />
+    <div class="text-center">
+      <span class="btn btn-danger" ng-click="changePage('inc01')">多选框全选演示</span>
+      <span class="btn btn-danger" ng-click="changePage('inc02')">单选按钮演示</span>
+      <span ng-bind="inc"></span>
+    </div>
+    <!--
+      ng-include里面的值不带'号表示动态include 通过scope中的变量控制
+      ng-include="'inc.html'"表示直接包含inc.html这个页面
+      ng-include="inc"表示包含出inc变量对应的页面
+    -->
+    <div class="myinc"><div ng-include="inc" class="myani"></div></div>
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <!-- 下面的次序必须严格遵守 在实际项目中会交给gulp这样的构建工具控制 -->
+    <!-- 首先是框架 -->
+    <script src="lib/js/angular.min.js"></script>
+    <!-- <script src="lib/js/angular-route.min.js"></script> -->
+    <script src="lib/js/angular-messages.min.js"></script>
+    <script src="lib/js/angular-animate.min.js"></script>
+    <script src="lib/js/angular-sanitize.min.js"></script>
+    <!-- 然后是初始化 -->
+    <script src="app/js/init.js"></script>
+    <!-- 然后是业务逻辑 -->
+    <script src="app/js/ng005.js"></script>
+    <script src="app/js/ng005-1.js"></script>
+    <script src="app/js/ng005-2.js"></script>
+    <!-- 最后是ng绑定启动 -->
+    <script src="app/js/startup.js"></script>
+  </body>
+</html>

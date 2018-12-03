@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Angularjs基础学习-4</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <!-- 基本控制器 -->
+    <div ng-controller="MyCtrl">
+      <div>
+        请输入:<input type="text" ng-model="welcome" />
+        <button ng-click="showWelcome()">确定</button>
+      </div>
+      <div ng-controller="OtherCtrl">
+        请输入:<input type="text" ng-model="welcome" />
+        <button ng-click="showWelcome()">确定</button>
+      </div>
+    </div>
+    <div ng-controller="OtherCtrl">
+      <div>
+        请输入:<input type="text" ng-model="welcome" />
+        <button ng-click="showWelcome()">确定</button>
+      </div>
+    </div>
+    <hr />
+    <div ng-controller="MyCtrl">
+      <div>
+        请输入:<input type="text" ng-model="welcome" />
+        <button ng-click="showWelcome()">确定</button>
+      </div>
+      <!--
+        ng-include 包含的页面位置 可以将另外的页面包含进来
+        该页面等同于本页面直接编写得效果 所以不要写body以及body以外的标签
+        ng-include="'ng004-inc.html'"表示将ng004-inc.html的内容放置到该位置
+      -->
+      <div ng-include="'ng004-inc.html'">
+
+      </div>
+    </div>
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <!-- 下面的次序必须严格遵守 在实际项目中会交给gulp这样的构建工具控制 -->
+    <!-- 首先是框架 -->
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/angular-route.min.js"></script>
+    <script src="lib/js/angular-messages.min.js"></script>
+    <script src="lib/js/angular-animate.min.js"></script>
+    <script src="lib/js/angular-sanitize.min.js"></script>
+    <!-- 然后是初始化 -->
+    <script src="app/js/init.js"></script>
+    <!-- 然后是业务逻辑 -->
+    <script src="app/js/ng004.js"></script>
+    <!-- 最后是ng绑定启动 -->
+    <script src="app/js/startup.js"></script>
+  </body>
+</html>
