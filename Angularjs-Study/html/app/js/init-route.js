@@ -118,12 +118,16 @@
     app.config([
       '$routeProvider',
       function($routeProvider) {
-        //路由配置
+        //路由配置 when 第一个参数是地址栏的路径
+        //第二个是配置项 templateurl是显示ng-view里面得到页面
+        //http//:127.0.0.1:20000/ng007.html#!/main
+        //otherwise:当所有的when都不匹配的时候生效
         $routeProvider
           .when('', { templateUrl: '/route/index.html' })
           .when('/', { templateUrl: '/route/index.html' })
           .when('/main', { templateUrl: '/route/main.html' })
-          .otherwise({ templateUrl: '/route/index.html' });
+          .otherwise({ templateUrl: '/route/route404.html' });
+        //.otherwise({ templateUrl: '/route/index.html' });
       }
     ]);
   });
