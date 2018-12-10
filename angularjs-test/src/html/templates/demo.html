@@ -1,0 +1,17 @@
+<!--
+  顶级元素加css限定，如果希望实现满屏高度效果，只需要在根元素中加入h100样式
+  该样式在common.css中定义，这个文件是全部页面公用的css，不要轻易修改该文件
+  除非是全部成员协议通过
+-->
+<div class="demo h100" ng-controller="DemoCtrl">
+  <div class="text-center">
+    <div class="main">
+      <!-- html访问图片目录直接images/路径/图片名即可，不区分html所在目录 -->
+      <img src="images/logo.png" class="img-responsive" />
+      所有的html文件都要在templates目录里面，
+      且都是html片段，还有bootstrap已经默认导入，可以直接使用，
+      路由映射是/route/page/你的页面路径和名称（不包括.html扩展名，不包括templates），
+      比如当前路由就是/route/page/demo
+    </div>
+  </div>
+</div>

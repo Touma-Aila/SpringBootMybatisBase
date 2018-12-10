@@ -24,7 +24,9 @@
     $scope.$on('$destroy', function() {
       $log.debug('RootCtrl destroy...');
     });
+    //设置对话框title
     DialogService.setDialogTitle($rootScope.appTitle);
+    //设置后台数据服务地址
     DataService.setDataServer('http://127.0.0.1:10000');
 
     // 监听视图切换

@@ -1,0 +1,18 @@
+/*
+css和html文件同名
+由于css会合并，所以要求所有的样式都要二级限定，避免冲突
+二级限定统一为文件夹名称-文件名称
+比如当前为.demo .当前页面样式
+如果css在test目录中，就要使用.test-demo .页面样式名称
+*/
+.demo {
+  /*
+  css访问图片都是../images/图片目录/图片名称，不论css在不在目录中
+  */
+  background-image: url('../images/UnderConstruction.jpg');
+  background-size: cover;
+}
+.demo .main {
+  font-size: 2rem;
+  color: #e02020;
+}
