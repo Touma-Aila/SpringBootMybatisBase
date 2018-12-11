@@ -1,0 +1,75 @@
+<div ng-controller="PageInfoIndexCtrl">
+  <div class="text-center bg-danger">
+    <span class="h1">页面数据管理</span>
+    <div class="text-center form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">页面主题</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.title"
+            placeholder="请输入页面主题"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">描述信息</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.info"
+            placeholder="请输入描述信息"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">联系电话</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.tel"
+            placeholder="请输入联系电话"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">版权信息</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.copyright"
+            placeholder="请输入版权信息"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">公司名称</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.comname"
+            placeholder="请输入公司名称"
+            class="form-control"
+          />
+        </div>
+        <span class="btn btn-danger" ng-click="add();">添加</span>
+      </div>
+    </div>
+    <div>
+      <table class="table table-bordered table-striped table-hover">
+        <tr>
+          <td>页面主题</td>
+          <td>描述信息</td>
+          <td>联系电话</td>
+          <td>版权信息</td>
+          <td>公司名称</td>
+          <td>最后更新时间</td>
+        </tr>
+        <tr ng-repeat="d in list">
+          <td><span ng-bind="d.title"></span></td>
+          <td><span ng-bind="d.info"></span></td>
+          <td><span ng-bind="d.tel"></span></td>
+          <td><span ng-bind="d.copyright"></span></td>
+          <td><span ng-bind="d.comname"></span></td>
+          <td><span ng-bind="d.lastupdate"></span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

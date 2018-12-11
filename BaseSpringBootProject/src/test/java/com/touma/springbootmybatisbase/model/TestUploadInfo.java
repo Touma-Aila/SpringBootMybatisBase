@@ -2,6 +2,12 @@ package com.touma.springbootmybatisbase.model;
 
 import com.touma.springbootmybatisbase.base.BaseEntity;
 
+/**
+ * -TbPageInfo模型层
+ * 
+ * @author 1329321290
+ *
+ */
 public class TestUploadInfo extends BaseEntity {
 
   private static final long serialVersionUID = -4582525688690268174L;

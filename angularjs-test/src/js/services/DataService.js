@@ -40,7 +40,7 @@
       }
       // 发送时间戳
       postdata.ajaxtimestamp = new Date().getTime();
-      postdata.servertoken = MyCookieService.getLocalData(servertokenKey);
+      postdata.token = MyCookieService.getLocalData(servertokenKey);
       $http({
         method: 'POST',
         url: service.dataServer + url,
@@ -51,10 +51,10 @@
           //处理服务器token
           if (
             data.data &&
-            data.data.servertoken &&
-            !MyUtilService.empty(MyUtilService.trim(data.data.servertoken))
+            data.data.token &&
+            !MyUtilService.empty(MyUtilService.trim(data.data.token))
           ) {
-            MyCookieService.putLocalData(servertokenKey, data.data.servertoken);
+            MyCookieService.putLocalData(servertokenKey, data.data.token);
           }
           (cb || angular.noop)(data.data);
         },

@@ -22,6 +22,7 @@ public class UserController {
 
   @RequestMapping("/login")
   public JsonMessage login(UserModel model) throws Exception {
+    Thread.sleep(2000);
     //http://127.0.0.1:20000/user/login?token=ac0ceab7-82bc-49d8-965b-987aec610448&user.username=Touma&user.password=touma123
     //"user.username":"Touma","user.password":"touma123","imageCode":"82wo9"
     return userService.login(model);

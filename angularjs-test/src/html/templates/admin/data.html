@@ -1,0 +1,12 @@
+<div ng-controller="AdminDataCtrl">
+  <div class="text-center">
+    <input type="text" ng-model="echo" placeholder="请输入回声信息" />
+    <span class="btn btn-primary" ng-click="getWelcome();">获取欢迎信息</span>
+    <hr />
+    <input type="text" ng-model="user.username" placeholder="用户名" />
+    <input type="password" ng-model="user.password" placeholder="密码" />
+    <span class="btn btn-primary" ng-click="login();">登录</span>
+  </div>
+  <div ng-bind-html="result"></div>
+  <pre ng-bind-html="jsonResult"></pre>
+</div>
