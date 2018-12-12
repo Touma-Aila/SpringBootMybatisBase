@@ -55,6 +55,48 @@
         DialogService.showAlert(data.message);
       });
     };
+
+    $scope.toPage = function(pageNumber) {
+      //范围检查
+      if (
+        pageNumber < 1 ||
+        pageNumber > $scope.page.pageCount ||
+        pageNumber == $scope.page.pageNumber
+      ) {
+        return;
+      }
+      $scope.page.pageNumber = pageNumber;
+      $scope.query();
+    };
+
+    //删除
+    $scope.delete = function(info) {
+      $log.debug(info);
+      DialogService.showConfirm('是否删除:' + info.comname, function() {
+        DialogService.showWait('删除记录中...');
+        DataService.send('/pageinfo/delete', { tbPageInfo: info }, function(
+          data
+        ) {
+          DialogService.hideWait();
+          if (data.success) {
+            $scope.query();
+            return;
+          }
+          DialogService.showAlert(data.message);
+        });
+      });
+    };
+
+    $scope.toModify = function(info) {
+      DialogService.showCustom(
+        'templates/pageinfo/ModifyCtrl.html',
+        info,
+        function() {
+          $scope.query();
+        }
+      );
+    };
+
     $scope.query();
   }
 })();

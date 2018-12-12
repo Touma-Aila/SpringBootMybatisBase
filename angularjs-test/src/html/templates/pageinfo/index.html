@@ -68,8 +68,34 @@
           <td><span ng-bind="d.copyright"></span></td>
           <td><span ng-bind="d.comname"></span></td>
           <td><span ng-bind="d.lastupdate"></span></td>
+          <td class="text-center">
+            <span class="btn btn-danger" ng-click="delete(d);">删除</span>
+            <span class="btn btn-primary" ng-click="toModify(d);">修改</span>
+          </td>
         </tr>
       </table>
+
+      <nav ng-if="page.pageCount>1" class="text-center">
+        <ul class="pagination">
+          <li>
+            <a href="javascript:void(0);" ng-click="toPage(1);"><span>第一页</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" ng-click="toPage(page.pageNumber+1);"><span>下一页</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">
+              <span>记录数/当前页/总页数-{{ page.total }}/{{ page.pageNumber }}/{{ page.pageCount }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" ng-click="toPage(page.pageNumber-1);"><span>上一页</span></a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" ng-click="toPage(page.pageCount);"><span>最后一页</span></a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>

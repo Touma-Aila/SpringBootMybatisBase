@@ -1,0 +1,57 @@
+<div ng-controller="ModifyCtrl">
+  <div>
+    <div class="text-center form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">页面主题</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.title"
+            placeholder="请输入页面主题"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">描述信息</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.info"
+            placeholder="请输入描述信息"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">联系电话</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.tel"
+            placeholder="请输入联系电话"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">版权信息</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.copyright"
+            placeholder="请输入版权信息"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">公司名称</span>
+          <input
+            type="text"
+            ng-model="tbPageInfo.comname"
+            placeholder="请输入公司名称"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <span class="btn btn-primary" ng-click="modify();">修改</span>
+    <span class="btn btn-primary" ng-click="close();">关闭</span>
+  </div>
+</div>
